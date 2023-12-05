@@ -1,0 +1,41 @@
+﻿  Manager.cpp
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\VisualLayerManager.h(117,60): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\ButtonCollection.h(75,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.h(43,22): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(29,7): warning C4101: 'modelMouseLoc': unreferenced local variable
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(234,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(235,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(236,40): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(236,23): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(237,29): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(237,23): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(244,20): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(245,38): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(245,20): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(246,29): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(321,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(322,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(323,40): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(323,23): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(324,29): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(324,23): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(365,67): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(367,64): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(385,17): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(386,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(387,40): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(387,23): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(388,29): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(388,23): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(708,21): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(735,18): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(736,29): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(737,35): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(737,13): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(738,24): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(738,13): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(776,19): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(777,38): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(777,20): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.cpp(778,28): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+  Project_Interface_V4.vcxproj -> C:\Users\leoichen\engcomp\Project_Interface_V4\ARM64\Debug\Project_Interface_V4.exe
