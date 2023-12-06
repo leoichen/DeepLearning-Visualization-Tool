@@ -107,7 +107,6 @@ public:
 
 };
 
-
 class ControlCollection {
 protected:
 	std::vector<Control*> theControls;

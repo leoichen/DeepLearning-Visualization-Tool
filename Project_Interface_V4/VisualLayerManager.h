@@ -84,6 +84,7 @@ public:
 	Layer getLayer() { return modelLayer; };
 	int getActivationVal(actType currActType);
 	void setActivation(int actVal);
+	void setKernelSizeFromComboBox(int currSelect);
 	bool getFixedInput() { return fixedInput; };
 	bool getFixedDropout() { return fixedDropout; };
 	bool getFixedPool() { return fixedPool; };
@@ -115,6 +116,7 @@ public:
 	void setInputSize(int newInputSize) { modelLayer.inputSize = newInputSize; checkPool(); };
 	void setOutputSize(int newOutputSize) { modelLayer.outputSize = newOutputSize; };
 	void setDropout(double newDropout) { modelLayer.dropOut = newDropout; };
+	void setKernelSize(int newKernelSize) { modelLayer.kernelSize = newKernelSize; };
 	void setPool(int newPool) { modelLayer.pool = newPool; };
 	void setFixedInput(bool newFixedInputSetting) { fixedInput = newFixedInputSetting; };
 	void setFixedDropout(bool newDropoutSetting) { fixedDropout = newDropoutSetting; };
@@ -185,6 +187,8 @@ public:
 		return nullptr;
 	}
 
+	// delete vis layer
+	void deleteVisLayer(VisualLayer* toDeleteVisLayer);
 
 	//Point2D getModelCoords(int screenX, int screenY, float originX, float originY, float scale);
 	//void setOriginAndScale(float& originX, float& originY, float& scale);

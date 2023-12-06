@@ -53,6 +53,7 @@ bool Manager::manage()
 		poolError = false;
 		lastLayerSizeError = false;
 		noModelFoundError = false;
+		deleteLayerMode = false;
 
 	}
 
@@ -215,10 +216,13 @@ void Manager::manageMenuScreen(int wid, int hei) {
 	startY += 20;
 
 
+
 	// Enable more buttons as needed
 	// Draw the buttons
 	menuButtons.paint();
 	menuButtons.checkHover(screenX, screenY);
+
+
 
 	int rectStartY = 500;
 	// Width and height of the rectangle
@@ -281,10 +285,19 @@ void Manager::manageMenuScreen(int wid, int hei) {
 		//cout << currentState << endl;
 		CancelSelected = !CancelSelected;
 	}
-	
+
 	// see if a visual layer was clicked
 	seeIfVisualLayerWasClicked();
 
+	if (key == FSKEY_D) // delete layer
+	{
+		std::cout << "Y" << std::endl;
+
+		deleteLastLayerOnly();
+	}
+	
+
+	
 
 }
 
@@ -428,6 +441,7 @@ void Manager::manageLinLayerScreen() {
 		VisualLayer* selectedVislayer = myVisualLayersManager.checkSelected();
 		if (selectedVislayer != nullptr)
 		{
+
 			int currIn = selectedVislayer->getLayer().inputSize;
 			LinearlayerButtons.getControl<TextBox*>(1000)->setCurrText(std::to_string(currIn));
 
@@ -550,7 +564,7 @@ void Manager::manageConvLayerScreen() {
 		buttonKey = ConvlayerButtons.checkClick(screenX, screenY);
 
 		// check if selected, if so change the edit bar values
-		VisualLayer* selectedVislayer = myVisualLayersManager.checkSelected();
+		selectedVislayer = myVisualLayersManager.checkSelected();
 		if (selectedVislayer != nullptr)
 		{
 			int currIn = selectedVislayer->getLayer().inputSize;
@@ -574,9 +588,25 @@ void Manager::manageConvLayerScreen() {
 
 			selectedVislayer->checkPool();
 			bool currPool = selectedVislayer->getLayer().pool;
-			//std::cout << currPool << std::endl;
-
 			ConvlayerButtons.getControl<ComboBox*>(6000)->setCurrSelection(currPool);
+
+
+			int currKernel = selectedVislayer->getLayer().kernelSize;
+			int currKernelVal = -1;
+			switch (currKernel)
+			{
+			case 3:
+				currKernelVal = 0;
+				break;
+			case 5:
+				currKernelVal = 1;
+				break;
+			case 7:
+				currKernelVal = 2;
+				break;
+			}
+			ConvlayerButtons.getControl<ComboBox*>(9000)->setCurrSelection(currKernelVal);
+
 
 			std::string newText;
 			if (buttonKey >= 1000)
@@ -588,7 +618,8 @@ void Manager::manageConvLayerScreen() {
 				}
 				// deal with combo boxes
 				else if ((buttonKey >= 3000 && buttonKey <= 3999) 
-					|| (buttonKey >= 5999 && buttonKey <= 6998 && !selectedVislayer->getFixedPool()))
+					|| (buttonKey >= 5999 && buttonKey <= 6998 && !selectedVislayer->getFixedPool())
+					|| (buttonKey >= 8999 && buttonKey <= 9998))
 				{
 					int currActivationValChange = currActivationVal;
 					ComboBox* currComboBox = nullptr;
@@ -600,6 +631,10 @@ void Manager::manageConvLayerScreen() {
 					else if (buttonKey >= 5999 && buttonKey <= 6998)
 					{
 						currComboBox = ConvlayerButtons.getControl<ComboBox*>(6000);
+					}
+					else if (buttonKey >= 8999 && buttonKey <= 9998)
+					{
+						currComboBox = ConvlayerButtons.getControl<ComboBox*>(9000);
 					}
 
 					currComboBox->getVal(screenX, screenY);
@@ -624,10 +659,12 @@ void Manager::manageConvLayerScreen() {
 							}
 							else if (buttonKey >= 6000 && buttonKey <= 6999)
 							{
-								std::cout << "C: " << currComboBox->getCurrSelection() << std::endl;
 								selectedVislayer->setPool(currComboBox->getCurrSelection()); // yes == 0, no == 1;
 							}
-
+							else if (buttonKey >= 8999 && buttonKey <= 9998)
+							{
+								selectedVislayer->setKernelSizeFromComboBox((currComboBox->getCurrSelection()));
+							}
 							currActivationValChange = currComboBox->getCurrSelection();
 							currComboBox->setIsExpanded(false);
 							break;
@@ -680,7 +717,7 @@ void Manager::manageConvLayerScreen() {
 
 			ConvlayerButtons.getControl<ComboBox*>(3000)->setCurrSelection(-1);
 			ConvlayerButtons.getControl<ComboBox*>(6000)->setCurrSelection(-1);
-
+			ConvlayerButtons.getControl<ComboBox*>(9000)->setCurrSelection(-1);
 
 		}
 		if (buttonKey != FSKEY_NULL)
@@ -919,8 +956,11 @@ void Manager::addConvLayerButtons()
 	ConvlayerButtons.add(activationComboBox);
 
 	startX += buttonWidth + spacing;
-	TextBox* kernelTextBox = new TextBox(startX, startY, buttonWidth, buttonHeight, 5000, "Kernel Size", &buttonFont, "Select Type of Size");
-	ConvlayerButtons.add(kernelTextBox);
+	ComboBox* kernelComboBox = new ComboBox(startX, startY, buttonWidth, buttonHeight, 9000, "Kernel Size", &buttonFont, "Select Kernel Size");
+	kernelComboBox->addItem("3");
+	kernelComboBox->addItem("5");
+	kernelComboBox->addItem("7");
+	ConvlayerButtons.add(kernelComboBox);
 
 	startX += buttonWidth + spacing;
 	ComboBox* poolComboBox = new ComboBox(startX, startY, buttonWidth, buttonHeight, 6000, "Max Pooling", &buttonFont, "Only Allowed if Input Size is Even");
@@ -982,6 +1022,17 @@ void Manager::seeIfVisualLayerWasClicked()
 	mouseEvent = FsGetMouseEvent(leftButton, middleButton,
 		rightButton, screenX, screenY);
 
+	if (deleteLayerMode)
+	{
+		addDeleteLayerButton();
+
+	
+		if (buttonKey == FSKEY_D)
+		{
+			deleteLastLayerOnly();
+		}
+	}
+
 	// check if want to drag a block
 	if (leftButton) {
 		// check if a visual layer has been clicked
@@ -992,6 +1043,10 @@ void Manager::seeIfVisualLayerWasClicked()
 		{
 			myVisualLayersManager.changetoSelectMode(clickedVisLayer);
 			myVisualLayersManager.moveVisualLayers(clickedVisLayer, screenX, screenY);
+
+			// set to delete mode;
+			deleteLayerMode = true;
+			addDeleteLayerButton();
 
 			currentState = LayerScreen;
 			if (clickedVisLayer->getLayer().type == LINEAR)
@@ -1052,6 +1107,28 @@ bool Manager::checkModelReqs(std::vector<Layer> finalModel)
 	}
 
 	return true;
+}
+
+void Manager::addDeleteLayerButton()
+{
+	{
+		int startX = 550; // X position where buttons start (adjust based on window size)
+		int startY = 425; // Y position where buttons start
+
+		deleteButton.add(startX, startY, buttonWidth, buttonHeight, FSKEY_D, "Delete", &buttonFont, "Delete Layer");
+		deleteButton.paint();
+	}
+
+}
+
+void Manager::deleteLastLayerOnly()
+{
+	selectedVislayer = myVisualLayersManager.checkSelected();
+
+	if (selectedVislayer != nullptr && selectedVislayer->getRightConnect() == nullptr)
+	{
+		myVisualLayersManager.deleteVisLayer(selectedVislayer);
+	}
 }
 
 void Manager::enableHelpButtons() {

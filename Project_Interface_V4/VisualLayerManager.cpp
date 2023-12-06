@@ -26,7 +26,7 @@ VisualLayer::VisualLayer(int locX, int locY, std::string layerType)
 	modelLayer.outputSize = 3;
 	modelLayer.activation = RELU;
 	modelLayer.dropOut = 1.;
-	modelLayer.kernelSize = 2;
+	modelLayer.kernelSize = 3;
 	modelLayer.pool = true;
 
 	checkPool();
@@ -257,7 +257,23 @@ case 3:
 }
 }
 
+void VisualLayer::setKernelSizeFromComboBox(int currSelect)
+{
 
+
+	switch (currSelect)
+	{
+	case 0:
+		modelLayer.kernelSize = 3;
+		break;
+	case 1:
+		modelLayer.kernelSize = 5;
+		break;
+	case 2:
+		modelLayer.kernelSize = 7;
+		break;
+	}
+}
 
 //void VisualLayer::move(int newCenterX, int newCenterY, std::string moveDirection, VisualLayer* originalVisLayer)
 //{	
@@ -639,6 +655,17 @@ void VisualLayerManager::changeToUnselectMode(VisualLayer* clickedVisLayer)
 {
 	clickedVisLayer->setSelected(false);
 	clickedVisLayer->setToDefaultColor();
+}
+
+void VisualLayerManager::deleteVisLayer(VisualLayer* toDeleteVisLayer)
+{
+	auto currIdx = std::find(allVisualLayers.begin(), allVisualLayers.end(), toDeleteVisLayer);
+
+	if (currIdx != allVisualLayers.end())
+	{
+		allVisualLayers.erase(currIdx);
+	}
+
 }
 
 

@@ -59,6 +59,7 @@ protected:
 	ControlCollection OptButtons;
 	ControlCollection ShowButtons;
 	ControlCollection HelpButtons;
+	ControlCollection deleteButton;
 	ComboBox* myComboBox;  // Add this line
 	ComicSansFont buttonFont;
 	ComicSansFont* textFont;
@@ -76,11 +77,13 @@ protected:
 
 	VisualLayerManager myVisualLayersManager;
 	VisualLayer* clickedVisLayer = nullptr;
+	VisualLayer* selectedVislayer = nullptr;
 
 	bool justChangedCombo = false;
 	bool poolError = false;
 	bool lastLayerSizeError = false;
 	bool noModelFoundError = false;
+	bool deleteLayerMode = false;
 
 public:
 	// PS07  PS07  PS07  PS07  PS07  
@@ -129,5 +132,8 @@ protected:
 	void drawVisualLayers();
 	void seeIfVisualLayerWasClicked();
 	bool checkModelReqs(std::vector<Layer> finalModel);
+
+	void addDeleteLayerButton();
+	void deleteLastLayerOnly();
 
 };
