@@ -1,5 +1,5 @@
 # DeepLearning-Visualization-Tool
-## put a pic 
+![Visualizer Display Screen](images/Screenshot 2023-12-08 172049.png)
 
 ## Overview
 
