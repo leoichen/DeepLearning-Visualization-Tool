@@ -1,5 +1,5 @@
 # DeepLearning-Visualization-Tool
-![Visualizer Display Screen](images/Screenshot 2023-12-08 172049.png)
+![Visualizer Display Screen](https://github.com/leoichen/DeepLearning-Visualization-Tool/blob/main/images/Screenshot%202023-12-08%20172049.png?raw=true)
 
 ## Overview
 
