@@ -1,5 +1,5 @@
 # DeepLearning-Visualization-Tool
-## put and image 
+## put a pic 
 
 ## Overview
 
