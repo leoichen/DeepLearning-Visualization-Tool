@@ -2,9 +2,9 @@
 ![Visualizer Display Screen](https://github.com/leoichen/DeepLearning-Visualization-Tool/blob/main/images/Screenshot%202023-12-08%20172049.png?raw=true)
 
 ## Overview
-The project is a Deep Learning tool that provides a graphical approach to creating neural networks. The tool allows you to drag and drop different layers and visualize the state of your model. This provides a way for those who don't have the technical capabilities to code neural networks to be able create them.
+The project is a Deep Learning tool that provides a graphical approach to creating neural networks. The tool allows you to drag and drop different layers and visualize the state of your model. This provides a way for those who don't have the technical capabilities to code neural networks to be able to create them.
 
-A lot files needed to run the Torch API are too large for GitHub. The complete code files can be found: https://drive.google.com/drive/folders/1MLd_l8DBpB-R15clHOXDwG9TWEffvp5e?usp=sharing. However, all the C++ code files are on GitHub.
+A lot files needed to run the Torch API are too large for GitHub. The complete code files can be found in: https://drive.google.com/drive/folders/1MLd_l8DBpB-R15clHOXDwG9TWEffvp5e?usp=sharing. However, all the C++ code files are on GitHub.
 
 ## Installation
 To run this code, you must have Libtorch properly installed. Libtorch provides the C++ Pytorch API which is the backbone to the deep learning models being built in this code.
