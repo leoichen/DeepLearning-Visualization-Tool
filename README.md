@@ -4,6 +4,10 @@
 ## Overview
 
 ## Installation
+To run this code, you must have Libtorch properly installed. Libtorch provides the C++ Pytorch API which is the backbone to the deep learning models being built in this code.
+In addition, the Libtorch Template Extention needs to be downloaded for Visual Studios. The download link can be found at: https://pytorch.org/cppdocs/installing.html#visual-studio-extension
+**Libtorch Version**
+1.10.0+cu113
 
 ## Application Usage
 
