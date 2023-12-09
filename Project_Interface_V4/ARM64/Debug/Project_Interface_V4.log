@@ -1,5 +1,0 @@
-﻿  main.cpp
-C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\VisualLayerManager.h(118,60): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\ButtonCollection.h(75,21): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-C:\Users\leoichen\engcomp\Project_Interface_V4\Project_Interface_V4\Manager.h(43,22): warning C4305: 'initializing': truncation from 'double' to 'float'
-  Project_Interface_V4.vcxproj -> C:\Users\leoichen\engcomp\Project_Interface_V4\ARM64\Debug\Project_Interface_V4.exe
